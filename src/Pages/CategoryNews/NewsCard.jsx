@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NewsCard = ({ news }) => {
     return (
@@ -13,7 +14,7 @@ const NewsCard = ({ news }) => {
                     Views: {news.total_view} | Rating: {news.rating.number} ({news.rating.badge})
                 </p>
                 <p className="text-gray-700 text-base mb-4">{news.details.slice(0, 100)}...</p>
-                <a href="#" className="text-orange-500 hover:text-orange-600 font-medium">Read More</a>
+                <Link to={`/news/${news._id}`} className="text-orange-500 hover:text-orange-600 font-medium">Read More</Link>
             </div>
             <div className="px-4 pb-4 flex justify-between items-center">
                 <div className="flex items-center">
